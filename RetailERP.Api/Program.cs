@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RetailERP.Application.Interfaces;
+using RetailERP.Application.Mappings;
 using RetailERP.Application.Services;
 using RetailERP.Infrastructure.Data;
 
@@ -13,12 +14,10 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ErpDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
-
-
 
 var app = builder.Build();
 
@@ -30,7 +29,4 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
-
 app.Run();
-
