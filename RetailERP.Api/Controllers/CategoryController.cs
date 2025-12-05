@@ -1,13 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RetailERP.Application.DTOs;
 using RetailERP.Application.Interfaces;
-using RetailERP.Domain.Entities;
+using RetailERP.Domain.Constants;
 
 namespace RetailERP.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize(Roles = RoleConstants.AllStaff)]
 public class CategoryController : ControllerBase
 {
     private readonly ICategoryService _categoryService;
@@ -26,11 +28,12 @@ public class CategoryController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<CategoryDto>> GetById(int id)
     {
-        var category = _categoryService.GetCategoryByIdAsync(id);
+        var category = await _categoryService.GetCategoryByIdAsync(id);
         return Ok(category);
     }
 
     [HttpPost]
+    [Authorize(Roles = RoleConstants.AdminAndManager)]
     public async Task<ActionResult<int>> Create(CategoryDto categoryDto)
     {
         var categoryId = await _categoryService.CreateCategoryAsync(categoryDto);
@@ -39,6 +42,7 @@ public class CategoryController : ControllerBase
 
 
     [HttpPut("{id}")]
+    [Authorize(Roles = RoleConstants.AdminAndManager)]
     public async Task<ActionResult<int>> Update(int id, CategoryDto categoryDto)
     {
         var categoryId = await _categoryService.UpdateCategoryAsync(id, categoryDto);
@@ -50,6 +54,7 @@ public class CategoryController : ControllerBase
 
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = RoleConstants.AdminAndManager)]
     public async Task<ActionResult<bool>> Delete(int id)
     {
         var succes = await _categoryService.DeleteCategoryAsync(id);
