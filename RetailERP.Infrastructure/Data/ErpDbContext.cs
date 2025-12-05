@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RetailERP.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -6,11 +7,11 @@ using System.Text;
 
 namespace RetailERP.Infrastructure.Data;
 
-public class ErpDbContext : DbContext
+public class ErpDbContext : IdentityDbContext<ApplicationUser>
 {
     public ErpDbContext(DbContextOptions<ErpDbContext> option): base(option)
     {
-        
+
     }
 
     public DbSet<Category> Categories { get; set; }
