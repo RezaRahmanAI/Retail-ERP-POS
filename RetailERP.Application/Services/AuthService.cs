@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RetailERP.Application.DTOs.Auth;
 using RetailERP.Application.Interfaces;
