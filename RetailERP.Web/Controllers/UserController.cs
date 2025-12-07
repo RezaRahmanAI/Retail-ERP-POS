@@ -7,7 +7,7 @@ using RetailERP.Domain.Entities;
 
 namespace RetailERP.Web.Controllers;
 
-[Authorize(Roles = RoleConstants.AdminAndManager)]
+//[Authorize(Roles = RoleConstants.AdminAndManager)]
 public class UserController : Controller
 {
     private readonly UserManager<ApplicationUser> _userManager;
