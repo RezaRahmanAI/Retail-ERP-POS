@@ -1,0 +1,71 @@
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<section class="flex min-h-screen items-center justify-center bg-background-light px-4 py-12">
+    <div class="w-full max-w-md">
+        <div class="mb-8 text-center space-y-2">
+            <h1 class="text-3xl font-bold tracking-tight">Create an account</h1>
+            <p class="text-subtle-light">Choose your role and start managing your mess or retail operations.</p>
+        </div>
+        <div class="rounded-xl border border-primary/20 bg-card-light shadow-sm">
+            <div class="p-2">
+                <div class="grid grid-cols-2 gap-2 rounded-lg bg-active-light p-1">
+                    <a class="rounded-md py-2 text-center text-sm font-medium text-subtle-light transition-colors hover:bg-active-light" asp-action="Login" asp-controller="Auth">Login</a>
+                    <button class="rounded-md bg-primary py-2 text-sm font-medium text-foreground-dark shadow-sm">Register</button>
+                </div>
+            </div>
+            <div class="p-6">
+                <form method="post" class="space-y-6" asp-action="Register" asp-controller="Auth">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-sm text-red-600"></div>
+                    <div>
+                        <label class="text-sm font-medium text-foreground-light" for="FullName">Full name</label>
+                        <div class="relative mt-2">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtle-light">badge</span>
+                            <input asp-for="FullName" class="form-input w-full rounded-lg border border-primary/30 bg-transparent py-2.5 pl-10 pr-4 text-foreground-light placeholder:text-subtle-light focus:border-primary focus:ring-primary/50" placeholder="Enter your full name" />
+                        </div>
+                        <span asp-validation-for="FullName" class="text-xs text-red-600"></span>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-foreground-light" for="Email">Email</label>
+                        <div class="relative mt-2">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtle-light">mail</span>
+                            <input asp-for="Email" class="form-input w-full rounded-lg border border-primary/30 bg-transparent py-2.5 pl-10 pr-4 text-foreground-light placeholder:text-subtle-light focus:border-primary focus:ring-primary/50" placeholder="you@example.com" />
+                        </div>
+                        <span asp-validation-for="Email" class="text-xs text-red-600"></span>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-foreground-light" for="Password">Password</label>
+                        <div class="relative mt-2">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtle-light">lock</span>
+                            <input asp-for="Password" class="form-input w-full rounded-lg border border-primary/30 bg-transparent py-2.5 pl-10 pr-4 text-foreground-light placeholder:text-subtle-light focus:border-primary focus:ring-primary/50" placeholder="Choose a strong password" />
+                        </div>
+                        <span asp-validation-for="Password" class="text-xs text-red-600"></span>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-foreground-light" for="Role">Role</label>
+                        <div class="relative mt-2">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtle-light">workspace_premium</span>
+                            <select asp-for="Role" class="form-select w-full rounded-lg border border-primary/30 bg-transparent py-2.5 pl-10 pr-4 text-foreground-light focus:border-primary focus:ring-primary/50" asp-items="Html.GetEnumSelectList<RetailERP.Domain.Enums.UserRole>()"></select>
+                        </div>
+                        <span asp-validation-for="Role" class="text-xs text-red-600"></span>
+                    </div>
+                    <div>
+                        <button class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold text-foreground-dark shadow-sm transition-opacity hover:opacity-90" type="submit">
+                            Create account
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p class="mt-8 text-center text-sm text-subtle-light">
+            Already registered?
+            <a class="font-medium text-primary hover:text-primary/80" asp-action="Login" asp-controller="Auth">Log in here</a>
+        </p>
+    </div>
+</section>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

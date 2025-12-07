@@ -1,0 +1,70 @@
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<section class="flex min-h-screen items-center justify-center bg-background-light px-4 py-12">
+    <div class="w-full max-w-md">
+        <div class="mb-8 text-center space-y-2">
+            <h1 class="text-3xl font-bold tracking-tight">Secure Login</h1>
+            <p class="text-subtle-light">Welcome back! Please enter your details.</p>
+            @if (TempData["RegistrationMessage"] is string registrationMessage)
+            {
+                <p class="text-sm font-semibold text-primary">@registrationMessage</p>
+            }
+        </div>
+        <div class="rounded-xl border border-primary/20 bg-card-light shadow-sm">
+            <div class="p-2">
+                <div class="grid grid-cols-2 gap-2 rounded-lg bg-active-light p-1">
+                    <button class="rounded-md bg-primary py-2 text-sm font-medium text-foreground-dark shadow-sm">Login</button>
+                    <a class="rounded-md py-2 text-center text-sm font-medium text-subtle-light transition-colors hover:bg-active-light" asp-action="Register" asp-controller="Auth">Register</a>
+                </div>
+            </div>
+            <div class="p-6">
+                <form method="post" class="space-y-6" asp-action="Login" asp-controller="Auth">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-sm text-red-600"></div>
+                    <div>
+                        <label class="text-sm font-medium text-foreground-light" for="Email">Email</label>
+                        <div class="relative mt-2">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtle-light">mail</span>
+                            <input asp-for="Email" class="form-input w-full rounded-lg border border-primary/30 bg-transparent py-2.5 pl-10 pr-4 text-foreground-light placeholder:text-subtle-light focus:border-primary focus:ring-primary/50" placeholder="you@example.com" type="email" />
+                        </div>
+                        <span asp-validation-for="Email" class="text-xs text-red-600"></span>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-foreground-light" for="Password">Password</label>
+                        <div class="relative mt-2">
+                            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtle-light">lock</span>
+                            <input asp-for="Password" class="form-input w-full rounded-lg border border-primary/30 bg-transparent py-2.5 pl-10 pr-4 text-foreground-light placeholder:text-subtle-light focus:border-primary focus:ring-primary/50" placeholder="••••••••" type="password" />
+                        </div>
+                        <span asp-validation-for="Password" class="text-xs text-red-600"></span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input asp-for="RememberMe" class="form-checkbox h-4 w-4 rounded border-primary/30 bg-background-light text-primary focus:ring-primary/50" type="checkbox" />
+                            <label class="ml-2 block text-sm text-subtle-light" asp-for="RememberMe">
+                                Remember me
+                            </label>
+                        </div>
+                        <div class="text-sm">
+                            <a class="font-medium text-primary hover:text-primary/80" href="#">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold text-foreground-dark shadow-sm transition-opacity hover:opacity-90" type="submit">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p class="mt-8 text-center text-sm text-subtle-light">
+            Don't have an account?
+            <a class="font-medium text-primary hover:text-primary/80" asp-action="Register" asp-controller="Auth">Register here</a>
+        </p>
+    </div>
+</section>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
