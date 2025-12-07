@@ -1,0 +1,142 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<section class="bg-background-light text-foreground-light">
+    <div class="relative flex min-h-screen w-full">
+        <aside class="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r border-border-light bg-card-light p-4 lg:flex">
+            <div class="mb-6 flex items-center gap-3 p-3">
+                <div class="text-primary size-8">
+                    <span class="material-symbols-outlined text-primary">storefront</span>
+                </div>
+                <h1 class="text-xl font-bold">RetailERP</h1>
+            </div>
+            <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3 rounded-lg bg-active-light px-3 py-2">
+                    <span class="material-symbols-outlined text-foreground-light" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    <p class="text-sm font-medium">Dashboard</p>
+                </div>
+                <div class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-active-light">
+                    <span class="material-symbols-outlined text-foreground-light">receipt_long</span>
+                    <p class="text-sm font-medium">Expenses</p>
+                </div>
+                <div class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-active-light">
+                    <span class="material-symbols-outlined text-foreground-light">group</span>
+                    <p class="text-sm font-medium">Members</p>
+                </div>
+                <div class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-active-light">
+                    <span class="material-symbols-outlined text-foreground-light">summarize</span>
+                    <p class="text-sm font-medium">Reports</p>
+                </div>
+                <div class="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-active-light">
+                    <span class="material-symbols-outlined text-foreground-light">settings</span>
+                    <p class="text-sm font-medium">Settings</p>
+                </div>
+            </div>
+            <div class="mt-auto">
+                <div class="flex items-center gap-3 border-t border-border-light pt-4">
+                    <div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=200&q=60");'></div>
+                    <div class="flex flex-col">
+                        <h1 class="text-base font-medium leading-normal">Retail Admin</h1>
+                        <p class="text-sm font-normal leading-normal text-subtle-light">Manager</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1">
+            <header class="sticky top-0 z-10 flex items-center justify-between border-b border-border-light bg-background-light/80 px-6 py-4 backdrop-blur-sm">
+                <h2 class="text-2xl font-bold leading-tight tracking-tight">Dashboard Overview</h2>
+                <button class="flex h-10 min-w-[120px] items-center justify-center rounded-lg bg-primary px-4 text-sm font-bold text-foreground-dark transition-opacity hover:opacity-90">
+                    Add Expense
+                </button>
+            </header>
+            <div class="space-y-8 px-6 py-8 lg:px-10">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="flex flex-col gap-2 rounded-xl border border-border-light bg-card-light p-6">
+                        <p class="text-base font-medium text-subtle-light">Total Monthly Expense</p>
+                        <p class="text-3xl font-bold tracking-tight">$1,250</p>
+                    </div>
+                    <div class="flex flex-col gap-2 rounded-xl border border-border-light bg-card-light p-6">
+                        <p class="text-base font-medium text-subtle-light">Total Meals</p>
+                        <p class="text-3xl font-bold tracking-tight">342</p>
+                    </div>
+                    <div class="flex flex-col gap-2 rounded-xl border border-border-light bg-card-light p-6">
+                        <p class="text-base font-medium text-subtle-light">Cost Per Meal</p>
+                        <p class="text-3xl font-bold tracking-tight">$3.65</p>
+                    </div>
+                    <div class="flex flex-col gap-2 rounded-xl border border-border-light bg-card-light p-6">
+                        <p class="text-base font-medium text-subtle-light">Active Members</p>
+                        <p class="text-3xl font-bold tracking-tight">8</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                    <div class="space-y-8 lg:col-span-2">
+                        <div class="flex flex-col gap-4 rounded-xl border border-border-light bg-card-light p-6">
+                            <div class="flex items-center justify-between gap-6">
+                                <p class="text-lg font-bold">Monthly Budget Status</p>
+                                <p class="text-sm font-medium">75% Used</p>
+                            </div>
+                            <div class="h-2.5 rounded-full bg-primary/20">
+                                <div class="h-2.5 rounded-full bg-primary" style="width: 75%;"></div>
+                            </div>
+                            <p class="text-sm font-normal text-subtle-light">You have spent $1,250 of your $1,600 budget.</p>
+                        </div>
+
+                        <div class="rounded-xl border border-border-light bg-card-light">
+                            <div class="border-b border-border-light p-6">
+                                <h3 class="text-lg font-bold">Recent Activity</h3>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="border-b border-border-light">
+                                        <tr>
+                                            <th class="p-4 text-sm font-semibold text-subtle-light">Member</th>
+                                            <th class="p-4 text-sm font-semibold text-subtle-light">Action</th>
+                                            <th class="p-4 text-sm font-semibold text-subtle-light">Timestamp</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b border-border-light">
+                                            <td class="p-4 text-sm">Sunil Verma</td>
+                                            <td class="p-4 text-sm">Added an expense: Groceries ($45.50)</td>
+                                            <td class="p-4 text-sm text-subtle-light">2 hours ago</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-4 text-sm">Amit Patel</td>
+                                            <td class="p-4 text-sm">Logged 2 meals</td>
+                                            <td class="p-4 text-sm text-subtle-light">5 hours ago</td>
+                                        </tr>
+                                        <tr class="border-t border-border-light">
+                                            <td class="p-4 text-sm">Vikram Singh</td>
+                                            <td class="p-4 text-sm">Logged 1 meal</td>
+                                            <td class="p-4 text-sm text-subtle-light">Yesterday</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 lg:col-span-1">
+                        <div class="flex flex-col gap-4 rounded-xl border border-border-light bg-card-light p-6">
+                            <div class="flex items-center gap-3">
+                                <div class="size-12 rounded-full bg-cover bg-center" style='background-image: url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=60");'></div>
+                                <div>
+                                    <p class="text-lg font-bold leading-tight">Log Your Meals</p>
+                                    <p class="text-sm text-subtle-light">Your meals today: <span class="font-bold text-foreground-light">2</span></p>
+                                </div>
+                            </div>
+                            <div class="mt-2 flex flex-col gap-3">
+                                <button class="flex w-full items-center justify-center rounded-lg bg-primary/20 px-4 py-2.5 text-sm font-bold text-foreground-light transition-colors hover:bg-primary/30">+1 Meal</button>
+                                <button class="flex w-full items-center justify-center rounded-lg bg-primary/20 px-4 py-2.5 text-sm font-bold text-foreground-light transition-colors hover:bg-primary/30">+2 Meals</button>
+                                <button class="flex w-full items-center justify-center rounded-lg border border-border-light px-4 py-2.5 text-sm font-bold text-foreground-light transition-colors hover:bg-active-light">Mark All Meals</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>

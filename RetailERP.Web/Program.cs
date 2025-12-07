@@ -2,10 +2,15 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RetailERP.Domain.Entities;
 using RetailERP.Infrastructure.Data;
+using RetailERP.Web.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.Configure<ApiSettings>(builder.Configuration.GetSection(ApiSettings.SectionName));
+
+builder.Services.AddHttpClient();
 
 // Add services to the container.
 builder.Services.AddDbContext<ErpDbContext>(options =>

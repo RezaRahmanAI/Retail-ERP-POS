@@ -1,8 +1,70 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="bg-background-light text-foreground-light">
+    <div class="mx-auto flex max-w-6xl flex-col gap-12 px-6 py-16 lg:flex-row lg:items-center">
+        <div class="flex-1 space-y-6">
+            <div class="inline-flex items-center gap-2 rounded-full bg-active-light px-4 py-2 text-xs font-semibold uppercase tracking-wide text-subtle-light">
+                Retail ERP & POS Platform
+            </div>
+            <h1 class="text-4xl font-extrabold tracking-tight text-foreground-light sm:text-5xl">
+                Seamless operations with a modern retail experience
+            </h1>
+            <p class="max-w-2xl text-lg text-subtle-light">
+                Manage inventory, sales, and teams with an elegant dashboard, secure authentication, and lightning-fast workflow design inspired by leading industry patterns.
+            </p>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a class="flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-foreground-dark shadow-sm transition hover:opacity-90" asp-controller="Auth" asp-action="Login">
+                    Log in
+                </a>
+                <a class="flex items-center justify-center rounded-full border border-border-light px-6 py-3 text-sm font-bold text-foreground-light transition hover:bg-active-light" asp-controller="Auth" asp-action="Register">
+                    Create an account
+                </a>
+            </div>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div class="rounded-xl border border-border-light bg-card-light p-4 shadow-sm">
+                    <p class="text-xs font-semibold uppercase text-subtle-light">Real-time visibility</p>
+                    <p class="mt-2 text-lg font-bold">Inventory, sales & members</p>
+                </div>
+                <div class="rounded-xl border border-border-light bg-card-light p-4 shadow-sm">
+                    <p class="text-xs font-semibold uppercase text-subtle-light">Secure access</p>
+                    <p class="mt-2 text-lg font-bold">Token-based authentication</p>
+                </div>
+                <div class="rounded-xl border border-border-light bg-card-light p-4 shadow-sm">
+                    <p class="text-xs font-semibold uppercase text-subtle-light">Built to scale</p>
+                    <p class="mt-2 text-lg font-bold">Modern, responsive UI</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex-1">
+            <div class="rounded-2xl border border-border-light bg-card-light p-6 shadow-lg">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-xl font-bold">Instant overview</h2>
+                    <span class="rounded-full bg-primary/20 px-3 py-1 text-xs font-semibold text-foreground-light">Live</span>
+                </div>
+                <div class="mt-6 grid grid-cols-2 gap-4">
+                    <div class="rounded-xl bg-active-light p-4">
+                        <p class="text-xs uppercase text-subtle-light">Active stores</p>
+                        <p class="text-3xl font-extrabold">08</p>
+                    </div>
+                    <div class="rounded-xl bg-active-light p-4">
+                        <p class="text-xs uppercase text-subtle-light">Transactions</p>
+                        <p class="text-3xl font-extrabold">2,341</p>
+                    </div>
+                    <div class="rounded-xl bg-active-light p-4">
+                        <p class="text-xs uppercase text-subtle-light">Meals served</p>
+                        <p class="text-3xl font-extrabold">620</p>
+                    </div>
+                    <div class="rounded-xl bg-active-light p-4">
+                        <p class="text-xs uppercase text-subtle-light">Avg. rating</p>
+                        <p class="text-3xl font-extrabold">4.8</p>
+                    </div>
+                </div>
+                <div class="mt-6 rounded-xl border border-border-light bg-background-light p-4 text-sm text-subtle-light">
+                    Tailwind CSS styling is applied across the experience for a clean, modern foundation.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
