@@ -13,9 +13,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailERP.Domain", "RetailE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailERP.Infrastructure", "RetailERP.Infrastructure\RetailERP.Infrastructure.csproj", "{225D62FE-4994-46D1-ADB0-806C7A78EFA2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RetailERP.View", "RetailERP.View", "{7B9CABFA-3DA9-4971-96B2-A9B6A72D3A3E}"
+        ProjectSection(SolutionItems) = preProject
+                RetailERP.View\README.md = RetailERP.View\README.md
+                RetailERP.View\angular.json = RetailERP.View\angular.json
+                RetailERP.View\package.json = RetailERP.View\package.json
+                RetailERP.View\tsconfig.json = RetailERP.View\tsconfig.json
+        EndProjectSection
+EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
+        GlobalSection(SolutionConfigurationPlatforms) = preSolution
+                Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
