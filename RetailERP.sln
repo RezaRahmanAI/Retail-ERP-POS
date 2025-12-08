@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailERP.Api", "RetailERP.Api\RetailERP.Api.csproj", "{B61F5224-21BD-4E57-9913-E92CA1499211}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailERP.Domain", "RetailERP.Domain\RetailERP.Domain.csproj", "{7EDF257D-0C34-435A-834C-701893D52E66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailERP.Infrastructure", "RetailERP.Infrastructure\RetailERP.Infrastructure.csproj", "{225D62FE-4994-46D1-ADB0-806C7A78EFA2}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "RetailERP.View", "RetailERP.View\RetailERP.View.esproj", "{6162D600-2894-99D9-2B46-18D5CF464B08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,24 @@ Global
 		{225D62FE-4994-46D1-ADB0-806C7A78EFA2}.Release|x64.Build.0 = Release|Any CPU
 		{225D62FE-4994-46D1-ADB0-806C7A78EFA2}.Release|x86.ActiveCfg = Release|Any CPU
 		{225D62FE-4994-46D1-ADB0-806C7A78EFA2}.Release|x86.Build.0 = Release|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Debug|x64.Build.0 = Debug|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Debug|x86.Build.0 = Debug|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Release|x64.ActiveCfg = Release|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Release|x64.Build.0 = Release|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Release|x64.Deploy.0 = Release|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Release|x86.ActiveCfg = Release|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Release|x86.Build.0 = Release|Any CPU
+		{6162D600-2894-99D9-2B46-18D5CF464B08}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
